@@ -54,3 +54,15 @@ In L<YourModule.pm>:
 B<EXPERIMENTAL.>
 
 This module implements parameterized L<Sah> schema in a simple way.
+
+
+=head1 FUNCTIONS
+
+=head2 get_schema
+
+
+=head1 SEE ALSO
+
+L<Sah::Schemas>
+
+L<Sah> and L<Data::Sah>
