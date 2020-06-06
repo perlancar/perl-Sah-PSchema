@@ -12,13 +12,13 @@ use Exporter 'import';
 our @EXPORT_OK = qw(get_schema);
 
 sub get_schema {
-    my ($name, $args, $merge) = @_;
+    my ($name, $args, $clause_set) = @_;
 
     my $mod = "Sah::PSchema::$name";
     (my $modpm = "$mod.pm") =~ s!::!/!g;
     require $modpm;
 
-    $mod->get_schema($args, $merge);
+    $mod->get_schema($args, $clause_set);
 }
 
 1;
