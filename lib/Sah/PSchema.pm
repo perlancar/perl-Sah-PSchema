@@ -60,6 +60,22 @@ This module implements parameterized L<Sah> schema in a simple way.
 
 =head2 get_schema
 
+Usage:
+
+ my $sch = get_schema($psch, \%args [ , \%clause_set ]);
+
+Example:
+
+ my $sch = get_schema("perl::modname", {ns_prefix=>"WordList"}, {req=>1});
+ # => ["perl::modname", {req=>1, 'x.completion'=>[perl_modname => {ns_prefix=>"WordList"}]}]
+
+The function simply loads C<Sah::PSchema::$psch> module then calls its
+C<get_schema> method with the arguments \%args and \%clause_set. In the above
+example, the module L<Sah::PSchema::perl::modname> module is loaded. This
+parameterized schema basically just return the regular C<perl::modname> (from
+L<Sah::Schema::perl::modname>) but with the C<ns_prefix> argument put into
+argument for C<x.completion>.
+
 
 =head1 SEE ALSO
 
